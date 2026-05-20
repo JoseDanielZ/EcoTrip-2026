@@ -58,4 +58,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose")
     implementation("androidx.lifecycle:lifecycle-runtime-compose")
+
+    // Agregar dependencia de datastore para android
+    implementation(libs.androidx.datastore.preferences)
 }
