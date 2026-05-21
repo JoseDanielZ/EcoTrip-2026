@@ -37,10 +37,10 @@ fun ResumenScreen(
                 navigationIcon = {
                     IconButton(
                         onClick = {
+                            // popUpTo limpia el back stack para evitar instancias acumuladas
+                            // launchSingleTop evita duplicar FormularioScreen
                             navController.navigate(FormularioRoute) {
-                                popUpTo(FormularioRoute) {
-                                    inclusive = false
-                                }
+                                popUpTo(FormularioRoute) { inclusive = false }
                                 launchSingleTop = true
                             }
                         }
@@ -62,10 +62,10 @@ fun ResumenScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 colors = CardDefaults.cardColors(
+                    // Usa MaterialTheme — cambia automáticamente con Material You
                     containerColor = MaterialTheme.colorScheme.surfaceVariant
                 )
             ) {
@@ -85,6 +85,7 @@ fun ResumenScreen(
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
 
+                    // Plantillas de cadena idiomáticas de Kotlin (string templates)
                     Text(
                         text = "Destino: ${resumenRoute.destino}",
                         style = MaterialTheme.typography.bodyLarge
@@ -97,6 +98,12 @@ fun ResumenScreen(
 
                     Text(
                         text = "Huella de carbono: ${resumenRoute.huellaCarbono}",
+                        style = MaterialTheme.typography.bodyLarge
+                    )
+
+                    // Muestra el booleano de viaje grupal como texto legible
+                    Text(
+                        text = "Modalidad: ${if (resumenRoute.esViajeGrupal) "Viaje en grupo" else "Viaje individual"}",
                         style = MaterialTheme.typography.bodyLarge
                     )
                 }
