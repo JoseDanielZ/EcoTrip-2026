@@ -1,4 +1,3 @@
-// Navegación type-safe para EcoTrip 2026
 package com.example.ecotrip_2026.navigation
 
 import kotlinx.serialization.Serializable
@@ -7,10 +6,12 @@ import kotlinx.serialization.Serializable
 @Serializable
 object FormularioRoute
 
-// Ruta de la pantalla de resumen (con parámetros type-safe)
+// Ruta type-safe de la pantalla de resumen
+// El compilador verifica en tiempo de compilación que todos los parámetros sean provistos
 @Serializable
 data class ResumenRoute(
-    val destino: String,       // Destino del viaje
-    val duracion: Int,         // Duración en días
-    val huellaCarbono: String  // Huella de carbono calculada
+    val destino: String,           // Destino del viaje
+    val duracion: Int,             // Duración en días
+    val huellaCarbono: String,     // "Baja" o "Estándar"
+    val esViajeGrupal: Boolean     // Si viaja en grupo o individual
 )
