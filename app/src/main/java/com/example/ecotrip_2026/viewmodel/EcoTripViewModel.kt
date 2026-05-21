@@ -2,7 +2,7 @@ package com.example.ecotrip_2026.viewmodel
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.example.ecotrip_2026.ui.models.PreferenciaViaje
+import com.example.ecotrip_2026.data.models.PreferenciaViaje
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

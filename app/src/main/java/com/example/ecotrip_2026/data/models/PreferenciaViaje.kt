@@ -1,4 +1,4 @@
-package com.example.ecotrip_2026.ui.models
+package com.example.ecotrip_2026.data.models
 
 data class PreferenciaViaje(
     val destino: String = "",
